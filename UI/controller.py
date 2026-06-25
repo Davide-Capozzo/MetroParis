@@ -9,7 +9,16 @@ class Controller:
         self._model = model
 
     def handleCreaGrafo(self,e):
-        pass
+        self._model.buildGraph() #non rest nulla
+        self._view.lst_result.controls.clear() #puliamo la finestra dove stampiamo
+        self._view.lst_result.controls.append(ft.Text("Grafo correttamente creato."))
+        self._view.lst_result.controls.append(ft.Text(f"Il grafo "
+                                                      f"è costituito da {self._model.get_numnodi()}"
+                                                      f" nodi"))
+        self._view.lst_result.controls.append(ft.Text(f"Il grafo è costituito"
+                                                      f"da {self._model.get_numarchi()}"
+                                                      f" archi"))
+        self._view.update_page()
 
     def handleCercaRaggiungibili(self,e):
         pass
